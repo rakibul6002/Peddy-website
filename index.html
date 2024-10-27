@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon">
+    <title>Peddy</title>
+    
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/abcf6b4e2d.js" crossorigin="anonymous"></script>
+
+    <!-- Daisy Ui & Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <!-- Header Section Start-->
+         <header class="sticky top-0 z-10 bg-white">
+            <div class="flex items-center justify-between py-4 max-w-screen-xl mx-5 lg:mx-auto ">
+                <!-- Logo Section Start -->
+                <div >
+                   <a class=" flex items-center justify-center gap-2" href="#">
+                        <img src="./images/logo.webp" alt="Peddy Logo">
+                        <h1 class="text-2xl font-bold">Peddy</h1>
+                   </a>
+                </div>
+                <!-- Logo Section End -->
+
+                <!-- Navbar Section Start -->
+                <div class=" hidden md:block">
+                    <nav >
+                        <ul class=" flex items-center justify-center gap-14 font-bold">
+                            <li><a href="#">Home</a></li> 
+                            <li><a href="#bestDeal">Shop</a></li> 
+                            <li><a href="#footer">Contact</a></li> 
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Navbar Section End -->
+
+                <!-- User Section Start -->
+                <div class=" flex items-center justify-center gap-2">
+                    <a href="#">
+                        <img src="./images/user.png" alt="">
+                    </a>
+                    <!-- DropDown Menu Section Start -->
+                        <div class=" md:hidden">
+                            <details class="dropdown dropdown-end  ">
+                                <summary class="btn m-1">
+
+                                    <svg
+                                    class="swap-off fill-current"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 512 512">
+                                    <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                                  </svg>
+
+                                </summary>
+                                <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-24 p-2 mt-5  shadow">
+                                    <li><a href="#">Home</a></li> 
+                                    <li><a href="#bestDeal">Shop</a></li> 
+                                    <li><a href="#footer">Contact</a></li>
+                                </ul>
+                              </details>
+                        </div>
+                    <!-- DropDown Menu Section End -->
+                </div>
+                <!-- User Section End -->
+
+                 
+            </div>
+            <hr>
+         </header>
+         <!-- Header Section End-->
+
+         <!-- Main Section Start-->
+          <main >
+            <!-- Baner section Start-->
+               <section id="banner" class="max-w-screen-xl mx-5 my-5 lg:mx-auto">
+                    <div class=" flex flex-col gap-5 items-center">
+                        <h4>Bringing Families Together ❤️‍🔥 </h4>
+                        <h1 class="text-5xl font-bold text-center">Your Path to Adoption <br class="hidden md:block" >Starts Here</h1>
+                        <p class="text-center text-sm">It is a long established fact that a reader will be distracted by the readable content of a page when looking <br class="hidden md:block"> at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                        <button class=" bg-[#0E7A81] px-4 py-2 rounded-lg text-white"><a href="#bestDeal">View More</a></button>
+                        <img src="./images/pet.webp" alt="">
+                    </div>
+               </section> 
+            <!-- Baner section End-->
+
+            <!-- Category Section Start -->
+               <section id="ctgSection" class="max-w-screen-xl mx-5 my-5 lg:mx-auto">
+                    <div class=" flex flex-col gap-5 items-center">
+                        <h1 class=" text-2xl font-bold">Adopt  Your  Best Friend</h1>
+                        <p class="text-center text-sm">It is a long established fact that a reader will be distracted by the readable content of a <br class="hidden md:block"> page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                        
+                    </div>
+                    <div id="Category" class=" grid grid-cols-2 md:grid-cols-4 gap-10 mt-10 ">
+
+                    </div>
+               </section>
+            <!-- Category Section End -->
+            
+            <!-- Best Deal Section Start -->
+            <section id="bestDeal" class="max-w-screen-xl mx-5 my-5 lg:mx-auto">
+                <div class=" flex items-center justify-between my-10">
+                    <div>
+                        <h2 class="text-2xl font-bold">Best Deal For you</h2>
+                    </div>
+                    <div>
+                        <button onclick="sortByPrice()" class="btn btn-primary  text-xl text-white bg-[#0E7A81]">Sort by Price</button>
+                    </div>
+                </div>
+                <div id="spinner" class="flex items-center justify-center hidden">
+                    <span class="loading loading-bars loading-lg"></span>
+                </div>
+                <div class="grid grid-cols-4 md:grid-cols-12 gap-5 mt-3">
+                    <div id="display" class=" col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    </div>
+                    <div  class="border-2 rounded-xl col-span-9 md:col-span-3">
+                        <div id="display-2" class=" grid grid-cols-2 ">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Best Deal Section End -->
+             <!-- Modal Section start -->
+                <!-- Modal-01 -->
+             <section>
+                <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+                    <div id="modalText" class="bg-white rounded-lg shadow-lg mt-20 w-8/12 md:w-6/12 h-[600px] overflow-scroll">
+                        
+                    </div>
+                </div>
+            </section>
+                <!-- Modal-02 -->
+            <section>
+                <div id="modal2" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+                    <div id="modalText2" class="bg-white rounded-lg shadow-lg w-96 mt-20">
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- Modal Section end -->
+          </main>
+         <!-- Main Section End-->
+
+          <!-- Footer Section Start-->
+           <footer id="footer" class="bg-[#131313]  text-white" >
+                <section  class="max-w-screen-xl mx-5 pt-16 lg:mx-auto">
+                    <div class="flex flex-col md:flex-row  justify-between gap-5 ">
+                        <!-- Details Section Start -->
+                        <div>
+                            <div>
+                                <a class=" flex items-center  gap-3" href="#">
+                                    <img src="./images/logo.webp" alt="Peddy Logo">
+                                    <h1 class="text-2xl font-bold">Peddy</h1>
+                               </a>
+                            </div>
+                            <div class="mt-5 ">
+                                <p class="text-xs w-52 mb-1 ">Location: av. Washington 165, NY CA 54003</p>
+                                <p class="text-xs mb-1">Phone: +31 85 964 47 25</p>
+                                <p class="text-xs mb-1">Email: info@yourdomain.com</p>
+                                <p class="text-xs ">Openings hours: 9.00 AM - 5.00 PM</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-5 ">
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <img class="w-7 h-7" src="./images/Social Media/facebook.png" alt="">
+                                </a>
+                                
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <img class="w-8 h-8" src="./images/Social Media/instagram.png" alt="">
+                                </a>
+                                <a href="https://x.com/tweeter" target="_blank">
+                                    <img class="w-8 h-8 rounded-full border-white" src="./images/Social Media/x icon.jpg" alt="">
+                                </a>
+                                <a  href="https://www.youtube.com/" target="_blank">
+                                    <img class="w-7 h-7" src="./images/Social Media/youtube.png" alt="">
+                                </a>
+                               
+                            </div>
+                        </div>
+                        <!-- Details Section End -->
+                        <div class="flex flex-col items-start  gap-3">
+                            <div>
+                                <h3 class="font-bold">Useful Links</h3>
+                            </div>
+                            <div>
+                                <nav>
+                                    <ul class="text-xs flex flex-col gap-2">
+                                        <li><a href="#">Home</a></li> 
+                                        <li><a href="#banner">About us</a></li> 
+                                        <li><a href="#bestDeal">Animalst</a></li>
+                                        <li><a href="#ctgSection">Category</a></li> 
+                                        <li><a href="#footer">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h3 class="font-bold">Drop a Message</h3>
+                            </div>
+                            <div class="flex flex-col gap-5 mt-8">
+                                <input
+                                  type="text"
+                                  placeholder="Enter your email"
+                                  class="input input-bordered join-item bg-gray-800 placeholder:text-xs" />
+                                <button class="btn btn-primary join-item bg-[#0E7A81]">Subscribe</button>
+                              </div>
+                        </div>
+                    </div>
+                    <hr class="mt-5">
+                    <div class=" py-5 text-center">
+                        <h1>© 2024 Peddy || Md.rakibul Islam || All rights reserved. </h1>
+                    </div>
+                </section>
+           </footer>
+          <!-- Footer Section End-->
+    <!-- Javascript CDN -->
+     <script src="./JS/peddy.js"></script>
+     
+</body>
+</html>
